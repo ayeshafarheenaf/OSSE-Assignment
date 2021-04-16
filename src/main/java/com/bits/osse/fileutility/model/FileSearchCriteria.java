@@ -32,6 +32,14 @@ public class FileSearchCriteria {
 		this.fileName = fileName;
 	}
 	
-	
+	private static void generatePDFFromHTML(String filename) {
+    		Document document = new Document();
+    		PdfWriter writer = PdfWriter.getInstance(document,
+     		new FileOutputStream("src/output/html.pdf"));
+    		document.open();
+    		XMLWorkerHelper.getInstance().parseXHtml(writer, document,
+      		new FileInputStream(filename));
+    		document.close();
+	}	
 
 }
