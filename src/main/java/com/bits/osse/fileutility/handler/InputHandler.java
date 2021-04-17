@@ -6,16 +6,18 @@ public class InputHandler {
 
 	public static String getConsoleInput() {
 		Scanner sc = new Scanner(System.in);
+		String input = null;
 		try {
-			String input = sc.nextLine();
+			input = sc.next();
 			if (input != null) {
 				return input;
 			} else {
 				System.out.println("Invalid input");
-				return null;
+
 			}
 		} finally {
-			sc.close();
+			// sc.close();
 		}
+		return input;
 	}
 }
